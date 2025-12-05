@@ -1,0 +1,7 @@
+{
+  "name": "Copy of FastPoint Cab",
+  "description": "A modern, PWA-ready taxi booking platform featuring a diverse fleet, instant booking, and reliable service.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
