@@ -100,7 +100,7 @@ export const SERVICES_DATA: Service[] = [
     title: 'Outstation Trips',
     description: 'Book FastPoint Cab for Reliable Long-Distance Rides, Perfect for Leisure or Work Travel.',
     icon: 'map-pin',
-    image: '/images/OutstationTrips.jpg',
+    image: 'images/OutstationTrips.jpg',
     features: [
       'Transparent one-way and round-trip fares.',
       'Experienced drivers for hill station driving.',
