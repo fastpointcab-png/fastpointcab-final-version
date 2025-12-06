@@ -1,15 +1,37 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BookingForm } from '../components/BookingForm';
 import { SERVICES_DATA, TESTIMONIALS_DATA } from '../constants';
 import { ArrowRight, Star, Shield, Clock, MapPin, Phone } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Home: React.FC = () => {
   // Split testimonials into two groups dynamically
   const midPoint = Math.ceil(TESTIMONIALS_DATA.length / 2);
   const firstRow = TESTIMONIALS_DATA.slice(0, midPoint);
   const secondRow = TESTIMONIALS_DATA.slice(midPoint);
+
+  const { state } = useLocation();
+
+  useEffect(() => {
+    if (state && state.scrollToBook) {
+      const element = document.getElementById('book');
+      if (element) {
+        // Small timeout to ensure render is complete
+        setTimeout(() => {
+          const navbarHeight = 80; // Approximate height of sticky navbar
+          const extraPadding = 20;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - extraPadding;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }, 100);
+      }
+    }
+  }, [state]);
 
   return (
     <div className="flex flex-col w-full overflow-hidden">
@@ -35,7 +57,7 @@ export const Home: React.FC = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg">
-              FastPoint Taxi Service <br />
+              FastPoint Taxi Service | <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Reliable Rides in Coimbatore</span>
             </h1>
             

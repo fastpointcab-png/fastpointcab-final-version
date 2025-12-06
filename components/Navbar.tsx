@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon } from 'lucide-react';
@@ -59,7 +60,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
             <Link 
-              to="/#book" 
+              to="/" 
+              state={{ scrollToBook: true }}
               className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-2.5 rounded-full font-bold transition-all shadow-md hover:shadow-lg hover:shadow-purple-500/25 transform hover:-translate-y-0.5"
             >
               Book Now
@@ -104,7 +106,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             ))}
             <div className="pt-4">
               <Link
-                to="/#book"
+                to="/"
+                state={{ scrollToBook: true }}
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-3.5 rounded-full font-bold shadow-lg shadow-purple-500/20"
               >

@@ -33,7 +33,7 @@ export const Fleet: React.FC = () => {
                 <div className="flex justify-between items-start mb-6">
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{car.name}</h3>
                   <div className="text-right">
-                    <span className="block text-2xl font-bold text-purple-600 dark:text-purple-400"></span>
+                    <span className="block text-2xl font-bold text-purple-600 dark:text-purple-400">{}</span>
                     <span className="text-xs text-slate-500"></span>
                   </div>
                 </div>
@@ -61,7 +61,8 @@ export const Fleet: React.FC = () => {
                 </div>
 
                 <Link 
-                  to="/#book" 
+                  to="/" 
+                  state={{ scrollToBook: true }}
                   className="block w-full text-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold py-3.5 rounded-full hover:bg-gradient-to-r hover:from-purple-600 hover:to-indigo-600 hover:text-white dark:hover:text-white transition-all shadow-md hover:shadow-lg"
                 >
                   Book This Ride
